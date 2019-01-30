@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+
+.nodes .node rect {
+    opacity: 0;
+}
+
+/**************************** flowchart classes*/
+
+.edgePath path.path {
+    fill: none;
+}
+
+.nodes {        
+    padding: 2px 2px 0px 0px;
+}
+
+.actor {
+    padding-right: 3px;
+    font-size: 12px;
+    float: right;
+}
+
+.node-content {
+    margin-top: 8px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+}
+
+.label {    
+    text-align: center;
+    font-size: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.text {         
+    margin-top: 0px;
+    font-size: 12px;
+    overflow: hidden;
+    /*white-space: nowrap*/
+
+}
+
+.edit-icon {              
+    float: right;                
+    margin-right: 5px;
+}
+
+.messageType {
+    background-color: darkslategray;
+    color: white;
+}
+
+.cardType {
+    background-color: darkslategray;
+    color: white;
+}
+
+.choiceType {
+    background-color: darkslategray;
+    color: white;
+}
+
+.userType {
+    background-color: rgba(255, 255, 255, 1);
+    border: grey;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: 2px;
+
+}
+
+.plus {
+    margin-top: 50px;
+    width: 50px;
+    height: 50px;
+    padding: 5px 5px 5px 5px;
+    background-color: rgba(255, 255, 255, 1);
+    border: grey;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.flowId {
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 170px;
+    height: 60px;        
+    border-radius: 25px;
+    background: lightgrey;
+}
+
+.flowId > .actor {
+    margin-top: -10px;
+    margin-right: 10px;
+}
+
+.flowId > .edit-icon {
+    margin-right: 15px;
+}
+
+.process {
+    margin-top: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    width: 200px;
+    height: 90px;        
+    border-radius: 25px;
+    background: lightsteelblue;
+}
+
+.process > .actor {
+    margin-top: -10px;
+    margin-right: 10px;
+}
+
+.process > .edit-icon {
+    margin-right: 15px;
+}
+
+
+/*****************************************end flowchart classes*/    
+
+
+/* Project Page */
+#workspace {
+    /*padding-top: 113px;*/
+    padding-bottom: 6px;
+    background-color: rgb(240, 240, 240);
+    font-family: 'Lato', sans-serif;
+}
+#workspace #flowTabs{
+    margin-top: 11px;
+    position: relative;
+}
+#workspace #flowTabs .nav-link{
+    color: #4a4a4a;
+    font-weight: normal;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    margin-right: 3px;
+    margin-bottom: -2px;
+    width: 107px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    position: relative;
+    padding-left: 5px;
+    padding-right: 5px
+}
+#workspace #flowTabs .nav-link:hover {
+    color: #3ec380;
+}
+
+#workspace #flowTabs .nav-link .edit {
+    box-sizing: content-box;
+    display: none;
+    width: 16px;
+    height: 16px;
+    background: #3ec380 url(../images/edit-flow-icon.png) no-repeat center top;
+    border: 1px solid #3ec380;
+    background-size: 16px 32px;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    top: -8px;
+}
+
+
+
+#workspace #flowTabs .nav-link .edit:hover {
+    background-color: #1fa662;
+    background-position: center bottom;
+    border-color: #1fa662;
+}
+
+#workspace #flowTabs .nav-link .delete  {
+    box-sizing: content-box;
+    display: none;
+    width: 16px;
+    height: 16px;
+    background: #4a4a4a url(../images/del-flow-icon.png) no-repeat center top;
+    border: 1px solid #4a4a4a;
+    background-size: 16px 32px;
+    border-radius: 50%;
+    position: absolute;
+    left: -8px;
+    top: -8px;
+}
+
+#workspace #flowTabs .nav-link .delete:hover {
+    background-color: #e00707;
+    background-position: center bottom;
+    border-color: #e00707;
+}
+#workspace #flowTabs .nav-link.active:hover .edit, #workspace #flowTabs .nav-link.active:hover .delete {
+    display: block;
+    color: #4a4a4a; 
+}
+
+
+#workspace #flowTabs .nav-link.active:hover .edit {
+    display: block;
+    color: #4a4a4a; 
+}
+#workspace #flowTabs .nav-link:hover .edit {
+    color: #4a4a4a;
+}
+#workspace #flowTabs .nav-link.active{
+    font-weight: 700;
+    border: 1px solid #dee2e6;
+    border-bottom: 1px solid #fff;
+    color: #4a4a4a;
+}
+#workspace #flowTabs .nav-link.btMas{
+    color: #fff;
+    font-weight: 700;
+    background-color: #9b9b9b;
+    margin-right: 0;
+    width: 40px;
+    height: 39px;
+    font-size: 20px !important;
+    line-height: 1;
+}
+#workspace #flowTabs .nav-link.btMas:hover {
+    color: #fff;
+    background-color: #3ec380;
+}
+#workspace #flowTabs .list a.dropdown-toggle {
+    width: 107px !important;
+    text-align: center;
+    position: relative;   
+}
+#workspace #flowTabs .list .dropdown-toggle:focus {
+    box-shadow: none;
+    outline: none;
+}
+#workspace #flowTabs .list a.dropdown-toggle::after {
+    border-top: .35em solid #000;    
+    position: absolute;
+    right: 5px;
+    top: 15px;
+}
+#workspace #flowTabs .list a.dropdown-toggle:hover::after {
+    border-top: .35em solid #000;    
+}
+
+#workspace #flowTabs .list .button-group.show a.dropdown-toggle::after {
+    -moz-transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+#workspace #flowTabs .list .select-channel-txt {
+    color: #4a4a4a;
+}
+
+#workspace #flowTabs .list .button-group:hover .select-channel-txt {
+    color: #3ec380;
+}
+#workspace #flowTabs .list .dropdown-menu {
+    box-sizing: border-box;
+    width: 120px !important;
+    padding: 11px 0 5px;
+}
+
+#workspace #flowTabs .list .dropdown-menu.show::before {
+    content: ' ';
+    display: block;
+    width: 107px;
+    height: 2px;
+    background-color: #fff;
+    margin-top: -12px;
+}
+#workspace #flowTabs .list .dropdown-menu li:first-child {
+    margin-top: 5px
+
+}
+#workspace #flowTabs .list .dropdown-menu li{
+
+    height: 24px;
+    line-height: 24px;
+    margin-top: 5px;
+}
+#workspace #flowTabs .list .dropdown-menu a {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 24px;
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 24px;
+    padding: 0 11px;
+}
+
+#workspace #flowTabs .list .dropdown-menu li a:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background: #3b2252;
+}
+#workspace .btTest{
+    float: right;
+}
+#workspace .back{
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+#workspace .back a {
+    text-decoration: none;
+    color: #000;
+}
+#workspace .back a:hover {
+    text-decoration: none;
+    color: #3EC380;
+}
+
+#workspace #container {
+    margin-top: 1px;
+    border:1px solid #e7e2e2;
+    overflow: scroll;        
+    background-color: white;
+    height: 570px;
+}
+#workspace #flowTabs .nav-link.dropdown-toggle{
+    text-align: left;
+}
+#workspace #zoom{
+    position: sticky; /*  there is an issue with fixed elements on parent with transforms (used to scale) https://bugs.chromium.org/p/chromium/issues/detail?id=20574&desc=2
+                        sticky seems to fix this but it's not so standard */
+    bottom: 7px;
+    left: 10px;
+    width: 18px;
+    user-select: none;
+
+}
+@media not all and (min-resolution:.001dpcm) { @media {
+                                                   #workspace #zoom { 
+                                                       padding-left: 10px;
+                                                   }
+                                               }}
+#workspace #zoom #zoomin,
+#workspace #zoom #zoomout{
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    color: white;
+    line-height: 17px;  
+    background: #9b9b9b;
+    border-radius: 9px 9px 0 0;
+    font-size: 16px;
+    padding-left: 1px;
+    overflow: hidden;
+}
+#workspace #zoom #zoomout{
+    border-radius: 0 0 9px 9px;
+    margin-top: 1px;
+    line-height: 0px;
+    font-weight: 700;
+
+
+}
+#workspace #zoom #zoomin:hover,
+#workspace #zoom #zoomout:hover {
+    background-color: #3ec380;
+}
+
+
+#workspace #svg-canvas .actor {
+    display: none; /* @TODO remove html tag instead? */
+}
+
+#workspace #svg-canvas .nodes {
+    padding: 0;
+    margin: 0;
+    width: 132px;
+    height: auto;
+    border-radius: 16px 16px 0;
+    border: 1px solid #afafaf;
+    white-space: normal;
+}
+
+#workspace #svg-canvas .nodes:hover {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+#workspace #svg-canvas .nodes .text {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.2em;
+    color: #4a4a4a;
+}
+
+/*Add Bot Output Node Button <<< THIS IS PLUS BUTTON*/ 
+#workspace #svg-canvas .plus {
+    box-sizing: border-box;
+    margin-top: 55px;
+    width: 44px;
+    height: 44px;
+    background-color: #3b2252;
+    border-radius: 23px;
+    color:#fff;   
+    text-align: center;
+    border: none;
+    padding: 0;
+}
+#workspace #svg-canvas .plus .node-content{
+    padding: 0px;
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 42px;
+    vertical-align: middle;
+}
+#workspace #svg-canvas .plus:hover {
+    background-color: #3ec380;
+    color: #fff;
+}
+
+/*Add User Input Node Button*/
+#workspace #svg-canvas .uiplusbig {
+    box-sizing: border-box;
+    margin-top: 55px;
+    width: 45px;
+    height: 45px;
+    border: 1px solid #afafaf;
+    background-color: #fff;
+    border-radius: 23px;
+    color:#4a4a4a;   
+    text-align: center;
+}
+
+#workspace #svg-canvas .uiplusbig .node-content{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 42px;
+    vertical-align: middle;
+}
+#workspace #svg-canvas .uiplusbig:hover {
+    border-color: #3ec380;
+    border-width: 2px;
+    color: #3ec380;
+    width: 44px;
+    height: 44px;
+}
+#workspace #svg-canvas .uiplusbig:hover .node-content{
+    line-height: 40px;
+}
+
+/*Add User Input Node Button small*/
+#workspace #svg-canvas .uiplus {
+    box-sizing: border-box;
+    margin-top: 63px;
+    width: 46px;
+    height: 46px;
+    background-color: #fff;
+    border-radius: 23px;
+    color:#4a4a4a;
+    border: 1px solid #4a4a4a;
+
+    text-align: center;
+}
+
+#workspace #svg-canvas .uiplus .node-content{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 44px;
+    vertical-align: middle;
+}
+#workspace #svg-canvas .uiplus:hover {
+    background-color: #fff;
+    border: 2px solid #3ec380;
+    color: #3ec380;
+}
+#workspace #svg-canvas .uiplus:hover .node-content{
+    line-height: 42px;
+}
+
+
+/*Bot Output Node Message Type*/
+#workspace #svg-canvas .messageType { 
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 0 23px 23px;
+    background-color: #3b2252;
+    width: 154px;
+    height: 70px; 
+    white-space: normal;
+    border: none;
+}
+
+#workspace #svg-canvas .messageType .node-content { 
+    margin: 0;
+    padding: 17px 17px;
+    width: 100%;
+    white-space: normal;
+    line-height: 1.2em;
+    color: #fff;
+
+}
+
+#workspace #svg-canvas .messageType .node-content .text { 
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.3em;
+    height: 34px;
+    overflow: hidden;
+    white-space: normal;
+}
+
+#workspace #svg-canvas .messageType .edit-icon {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: -62px;
+    color: rgba(0,0,0,0);
+}
+
+#workspace #svg-canvas .messageType:hover .edit-icon {
+    display: block;
+}
+
+#workspace #svg-canvas .messageType .edit-icon span {
+    width: 13px;
+    height: 13px;
+    display: block;
+    float: left;
+    background: url(../images/trash-icon.png) no-repeat center top;
+    background-size: cover;
+
+    margin-left: 4px;
+}
+#workspace #svg-canvas .messageType .edit-icon > span ~ span {    
+    margin-top: 30px;
+    margin-left: 134px;
+    background: url(../images/edit-icon.png) no-repeat center top;
+    background-size: cover;
+}
+#workspace #svg-canvas .messageType .edit-icon span:hover {
+    background-position: center bottom;
+}
+
+/*Bot Output Node User Type*/
+#workspace #svg-canvas .userType { 
+    box-sizing: border-box;
+    padding: 0px;
+    width: 132px;
+    height: 52px;
+    white-space: normal;   
+}
+
+#workspace #svg-canvas .userType .node-content { 
+    margin: 0;
+    padding: 17px 17px;
+    width: 100%;
+    white-space: normal;
+    line-height: 1.2em;    
+}
+#workspace #svg-canvas .userType:hover .edit-icon {
+    display: block;
+}
+#workspace #svg-canvas .userType .edit-icon {
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: -46px;
+    margin-left: 4px;
+    text-align: right;
+    color: rgba(0,0,0,0);
+}
+
+#workspace #svg-canvas .userType .edit-icon span {
+    width: 13px;
+    height: 13px;
+    display: block;
+
+    background: url(../images/trash-icon.png) no-repeat center center;
+    background-size: cover;
+
+    margin-left: 4px;
+}
+#workspace #svg-canvas .userType .edit-icon > span ~ span {    
+    background: url(../images/edit-icon.png) no-repeat center center;
+    background-size: cover;
+    margin-top: 18px;
+    margin-left: 114px;
+}
+#workspace #svg-canvas .userType .edit-icon span:hover {
+    background-position: center bottom;
+}
+
+#workspace #svg-canvas .userType .add-input {
+    cursor: pointer;
+    margin-left: 130px;
+    margin-top: -47px;
+    width: 160px;
+    height: 45px;
+    display: none;
+    padding-top: 16px;
+    padding-left: 5px;
+    /*    background-color: yellow;*/
+}
+
+/* add user input hover */
+#workspace #svg-canvas .messageType .add-input {
+    cursor: pointer;
+    margin-left: 90px;
+    margin-top: 4px;
+    width: 130px;
+    height: 25px;
+    transition: visibility 1s;    
+    display: flex;
+    padding-top: 0;
+    padding-left: 5px;        
+    visibility: hidden;
+}
+
+#workspace #svg-canvas .messageType:hover .add-input {           
+    visibility: visible;
+}
+
+#workspace #svg-canvas .messageType .add-input .icon {     
+    display: block;
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 50%;
+    background-color: #3ec380;
+    border: 1px solid #3ec380;
+    width: 15px;
+    height: 15px; 
+    cursor: pointer;
+    margin-right: 6px;
+    margin-top: 0px;
+    color: #fff;
+    line-height: 12px;
+    font-size: 15px;
+    text-align: center;
+
+}
+
+#workspace #svg-canvas .messageType .add-input .text {
+    display: inline-block;
+    text-align: left;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 400;
+    padding: 0;
+    margin: 2px 0 0;
+    width: 80px;
+    white-space: normal;
+}
+
+#workspace #svg-canvas .messageType .add-input:hover .icon {
+    background-color: #fff;
+    color: #3ec380;
+}
+
+#workspace #svg-canvas .messageType .add-input:hover .text {
+    font-weight: 700;
+}
+
+
+/*Bot Output Node Flow Connector*/
+
+#workspace #svg-canvas .flowConnector { 
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 0;
+    background-color: #fff;
+    width: 135px;
+    height: 70px; 
+    white-space: normal;
+}
+
+#workspace #svg-canvas .flowConnector::before { 
+    content: ' ';
+    display: inline;
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 50%;
+    border: 11px solid #4A4A4A;
+    background-color: #fff;
+    width: 27px;
+    height: 27px; 
+    cursor: pointer;
+    float:left;
+    margin-left: 54px;
+    text-align: center;
+}
+
+#workspace #svg-canvas .flowConnector:hover::before { 
+    border: 11px solid #3ec380;
+}
+
+#workspace #svg-canvas .flowConnector .actor {
+    display: inline;
+    text-align: center;
+    font-size: 14px;
+    line-height: 27px;
+    clear: both;
+    width: 135px;
+    pointer-events: none;
+    cursor: pointer;
+}
+#workspace #svg-canvas .flowConnector .node-content {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+#workspace #svg-canvas .flowConnector .edit-icon {
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+    text-align: center;
+    color: rgba(0,0,0,0);
+    clear: both;
+}
+
+#workspace #svg-canvas .flowConnector:hover .edit-icon {
+    display: block;
+}
+
+#workspace #svg-canvas .flowConnector:hover .node-content {
+    color: #3ec380; 
+}
+
+#workspace #svg-canvas .flowConnector .edit-icon span {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background: url(../images/trash-icon.png) no-repeat center center;
+    background-size: cover;
+    margin-left: 4px;
+}
+#workspace #svg-canvas .flowConnector .edit-icon > span ~ span {    
+    background: url(../images/edit-icon.png) no-repeat center center;
+    background-size: cover;
+}
+#workspace #svg-canvas .flowConnector .edit-icon span:hover {
+    background-position: center bottom;
+}
+
+/*Bot Output  Node Connector*/
+
+#workspace #svg-canvas .nodeConnector { 
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 0;
+    background-color: #fff;
+    width: 135px;
+    height: 70px; 
+    white-space: normal;
+}
+
+#workspace #svg-canvas .nodeConnector::before { 
+    content: ' ';
+    display: inline;
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 50%;
+    border: 11px solid #3b2252;
+    background-color: #fff;
+    width: 27px;
+    height: 27px; 
+    cursor: pointer;
+    float:left;
+    margin-left: 54px;
+    text-align: center;
+}
+
+#workspace #svg-canvas .nodeConnector:hover::before { 
+    border: 11px solid #3ec380;
+}
+
+#workspace #svg-canvas .nodeConnector .actor {
+    display: inline;
+    text-align: center;
+    font-size: 14px;
+    line-height: 27px;
+    clear: both;
+    width: 135px;
+    pointer-events: none;
+    cursor: pointer;
+}
+#workspace #svg-canvas .nodeConnector .node-content {
+    display: block;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    line-height: 14px;
+    font-weight: 900;
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+#workspace #svg-canvas .nodeConnector .edit-icon {
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0; 
+    text-align: center;
+    color: rgba(0,0,0,0);
+    clear: both;
+}
+
+#workspace #svg-canvas .nodeConnector:hover .edit-icon {
+    display: block;
+}
+
+#workspace #svg-canvas .nodeConnector:hover .node-content {
+    color: #3ec380; 
+}
+
+#workspace #svg-canvas .nodeConnector .edit-icon span {
+    width: 13px;
+    height: 13px;
+    display: inline-block;
+    background: url(../images/trash-icon.png) no-repeat center center;
+    background-size: cover;
+    margin-left: 4px;
+}
+#workspace #svg-canvas .nodeConnector .edit-icon > span ~ span {    
+    background: url(../images/edit-icon.png) no-repeat center center;
+    background-size: cover;
+}
+#workspace #svg-canvas .nodeConnector .edit-icon span:hover {
+    background-position: center bottom;
+}
+
+
+/* Process Node */
+
+#workspace #svg-canvas .process { 
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 0 16px 16px;
+    background-color: #3b2252;
+    width: 132px;
+    height: 52px;
+    border: none;
+    white-space: normal;
+    cursor: pointer;
+}
+
+
+#workspace #svg-canvas .process .node-content { 
+    margin: 0;
+    padding: 17px 17px;
+    width: 100%;
+    white-space: normal;
+    line-height: 1.2em;
+    color: #fff;
+}
+#workspace #svg-canvas .process .label {
+
+}
+#workspace #svg-canvas .process .node-content .text {
+    text-align: left;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    color: #fff;
+    text-align: center;
+}
+#workspace #svg-canvas .process .edit-icon {
+    display: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    margin-top: -46px;
+    margin-left: 4px;
+    text-align: right;
+    color: rgba(0,0,0,0);
+}
+
+#workspace #svg-canvas .process:hover .edit-icon {
+    display: block;
+}
+
+#workspace #svg-canvas .process .edit-icon span {
+    width: 13px;
+    height: 13px;
+    display: block;
+    background: url(../images/trash-icon.png) no-repeat center top;
+    background-size: cover;
+    margin-left: 4px;
+}
+#workspace #svg-canvas .process .edit-icon > span ~ span {    
+
+    background: url(../images/edit-icon.png) no-repeat center top;
+    background-size: cover;
+    margin-top: 18px;
+    margin-left: 114px;
+}
+#workspace #svg-canvas .process .edit-icon span:hover {
+    background-position: center bottom;
+}
+
+#workspace .form-control::-webkit-input-placeholder, #myUserModal .form-control.numeric::-webkit-placeholder { /* Chrome/Opera/Safari */
+    color: #afafaf;
+}
+
+/*Test Sidebar*/
+
+
+.test-sidebar {
+    display: block;
+    width: 346px;
+    height: calc(100% - 83px);
+    background: #fff;
+    top: 83px;
+    right: 0;
+    position: fixed;
+    box-shadow: -5px 0 10px rgba(0,0,0,0.5);
+}

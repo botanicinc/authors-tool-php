@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700,900');
+
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+/* Quick Tips  */
+#quicktips {
+    /*padding-top: 138px;*/
+    padding-bottom: 10px;
+    background-color: rgb(240, 240, 240);
+    font-family: 'Lato', sans-serif;
+    color: #4a4a4a;
+}
+
+/*nuevo */
+#quicktips .project{
+    padding-bottom: 0
+}
+#quicktips .project-name {
+    font-weight: 400;
+    /* nuevo */
+    cursor: pointer;
+    
+    padding-bottom: 22px; 
+    margin-bottom: 0;
+
+}
+
+#quicktips .separator{
+    /* nuevo */ display: none;
+}
+#quicktips  .project-name.show {
+    font-weight: 900;
+}
+#quicktips .conv-builder {
+    padding: 10px 39px;
+}
+#quicktips .info {
+    padding: 32px 39px 10px;
+    border-top: 1px solid #e7e2e2;
+    border-radius: 0 0 5px 5px;   
+    overflow: hidden;
+
+}
+
+#quicktips .arrow-handle  {
+    pointer-events: none;
+}
+
+#quicktips .arrowdown {
+    margin-top: 6px;
+}
+
+#quicktips .list-icons{
+    margin: 0
+}
+#quicktips .list-icons .item{
+    margin-right: 30px
+}
+#quicktips .list-icons .item:last-child{
+    margin-right: 0
+}
+#quicktips .list-icons a figure {
+	width: 186px;
+	height: 186px;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+#quicktips .list-icons a {
+	color: #4a4a4a;
+	text-align: center;
+	font-size: 16px !important;
+	font-weight: 400;
+    outline: none;
+
+}
+#quicktips .list-icons a:hover {
+	text-decoration: none;
+}
+#quicktips .list-icons a figure:hover{
+}
+
+#quicktips .modal .modal-header{
+    text-align: center;
+    min-height: 158px
+}
+#quicktips .modal .modal-body {
+	text-align: center;
+	padding: 35px 50px 25px !important;
+}
+#quicktips .modal .modal-content h2{
+	font-size: 22px;
+    font-weight: 700;
+    color: #4a4a4a;
+}
+#quicktips .modal .modal-content p {
+    font-size: 16px;
+    color: #4a4a4a;
+    margin: 0;
+    line-height: 30px;
+}
+#quicktips .modal .modal-footer {
+    border: none;
+    padding-top: 0;
+}
+#quicktips .modal .modal-footer a{
+    font-size: 14px;
+    color: #000;
+    font-weight: 700
+}
+#quicktips .modal .modal-footer a:hover{
+    text-decoration: none;
+    color: #3ec380
+}
+#quicktips .modal .modal-header{
+    border-radius: 10pt 10px 0 0;
+}
+
+#quicktips .item {
+    padding: 0;
+    margin-bottom: 22px;
+}
+#quicktips .item .ItemTop {
+    border-radius: 5px 5px 0 0;
+    padding: 18px 0;
+    background: #c6e7d4
+}
+#quicktips .item .ItemTop.closed {
+    border-radius: 5px;
+}
+#quicktips .item .ItemTop .project-name-item{
+    
+    padding: 0 39px;
+    margin-bottom: 22px;
+    font-size: 18px;
+    line-height: 35px;
+
+    margin-bottom: 0;
+    padding: 0 32px;
+    cursor: pointer;
+}
+#quicktips .item .ItemTop .arrow-handle{
+    margin-right: 20px;
+    padding-top: 4px;
+}
+#quicktips .item .full-width-item{
+    border:1px solid #e7e2e2;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    padding: 25px 30px 13px;
+}
+#quicktips .item .full-width-item .title{
+    font-weight: 700;
+}
+#quicktips .item .full-width-item blockquote{
+    padding: 0 30px;
+}
+#quicktips .item .full-width-item blockquote p{
+    margin-bottom: 0;
+    line-height: 26px;
+}
+
+#quicktips .list-icons a figure.project{
+    background: url(../images/qt_projects_icon.png);
+}
+#quicktips .list-icons a figure.project:hover{
+    background: url(../images/qt_projects_icon.png) center -186px;
+}
+
+#quicktips .list-icons a figure.workspace{
+    background: url(../images/qt_workspace_icon.png);
+}
+#quicktips .list-icons a figure.workspace:hover{
+    background: url(../images/qt_workspace_icon.png) center -186px;
+}
+
+
+#quicktips .list-icons a figure.workspace{
+    background: url(../images/qt_workspace_icon.png);
+}
+#quicktips .list-icons a figure.workspace:hover{
+    background: url(../images/qt_workspace_icon.png) center -186px;
+}
+
+#quicktips .list-icons a figure.flows{
+    background: url(../images/qt_flows_icon.png);
+}
+#quicktips .list-icons a figure.flows:hover{
+    background: url(../images/qt_flows_icon.png) center -186px;
+}
+
+
+#quicktips .list-icons a figure.paths{
+    background: url(../images/qt_paths_icon.png);
+}
+#quicktips .list-icons a figure.paths:hover{
+    background: url(../images/qt_paths_icon.png) center -186px;
+}
+
+
+#quicktips .list-icons a figure.nodes{
+    background: url(../images/qt_nodes_icon.png);
+}
+#quicktips .list-icons a figure.nodes:hover{
+    background: url(../images/qt_nodes_icon.png) center -186px;
+}
+
+
+#quicktips .list-icons a figure.intents{
+    background: url(../images/qt_intents_icon.png);
+}
+#quicktips .list-icons a figure.intents:hover{
+    background: url(../images/qt_intents_icon.png) center -186px;
+}
+
+#quicktips .list-icons a figure.botoutput{
+    background: url(../images/qt_bot_output_icon.png);
+}
+#quicktips .list-icons a figure.botoutput:hover{
+    background: url(../images/qt_bot_output_icon.png) center -186px;
+}
+
+#quicktips .list-icons a figure.userinput{
+    background: url(../images/qt_user_input_icon.png);
+}
+#quicktips .list-icons a figure.userinput:hover{
+    background: url(../images/qt_user_input_icon.png) center -186px;
+}
+
+#quicktips .list-icons a figure.connectors{
+    background: url(../images/qt_connectors_icon.png);
+}
+#quicktips .list-icons a figure.connectors:hover{
+    background: url(../images/qt_connectors_icon.png) center -186px;
+}
+
+
+/*Headers Backgroud*/
+
+#myModalProject .modal-header {
+    background:#c6e7d4 url(../images/Projects_Icon.png) center center no-repeat;
+}
+
+#myModalWorkspace .modal-header {
+    background:#c6e7d4 url(../images/Workspace_Icon.png) center center no-repeat;
+}
+
+#myModalFlows .modal-header {
+    background:#c6e7d4 url(../images/Flows_Icon.png) center center no-repeat;
+}
+
+#myModalPaths .modal-header {
+    background:#c6e7d4 url(../images/Paths_Icon.png) center center no-repeat;
+}
+
+#myModalNodes .modal-header {
+    background:#c6e7d4 url(../images/Nodes_Icon.png) center center no-repeat;
+}
+
+/*Conversation*/
+
+#myModalIntents .modal-header {
+    background:#c6e7d4 url(../images/Intents_Icon.png) center center no-repeat;
+}
+
+#myModalBotOutput .modal-header {
+    background:#c6e7d4 url(../images/Bot_Output_Icon.png) center center no-repeat;
+}
+
+#myModalUserinput .modal-header {
+    background:#c6e7d4 url(../images/User_Input_Icon.png) center center no-repeat;
+}
+
+#myModalConnectors .modal-header {
+    background:#c6e7d4 url(../images/Connectors_Icon.png) center center no-repeat;
+}

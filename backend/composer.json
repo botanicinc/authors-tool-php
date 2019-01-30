@@ -1,0 +1,44 @@
+{
+    "name": "botanicinc/authors_tool",
+    "description": "Botanic Author's Tool backend.",
+    "authors": [
+	{
+	    "name": "Nicolas",
+	    "email": "nicolas@botanic.io",
+	    "homepage": "http://botanic.io",
+	    "role": "Developer"
+	}
+    ],
+    "type": "project",
+    "require": {
+        "php": ">=7.0",
+        "laravel/lumen-framework": "5.5.*",
+        "vlucas/phpdotenv": "~2.2"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/",
+            "database/"
+        ]
+    },
+    "scripts": {
+        "post-root-package-install": [
+            "php -r \"copy('.env.example', '.env');\""
+        ]
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true
+    }
+}
